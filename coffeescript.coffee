@@ -6,4 +6,7 @@ gulp.task 'coffee', ->
   .pipe coffee bare: true
   .pipe gulp.dest 'lib/public/js'
 
-gulp.task 'default', ['coffee']
+gulp.task 'watch', ->
+  gulp.watch 'assets/coffee/*.coffee', ['coffee']
+
+gulp.task 'default', ['watch', 'coffee']
